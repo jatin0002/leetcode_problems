@@ -16,7 +16,7 @@ public class FindMinCoins {
     // Approch
     // first sort the deno array in decreasing order
     // create one result  array
-    // Finde the largest deno that is smaller then remainning amount and keep adding deno while the remaining amount is zero
+    // Find the largest deno that is smaller then remainning amount and keep adding deno while the remaining amount is zero
 
     public static ArrayList<Integer> findMinCoins(int V, Integer[] deno) {
         ArrayList<Integer> res = new ArrayList<>();

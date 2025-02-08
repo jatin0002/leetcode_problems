@@ -1,5 +1,7 @@
 package org.jatin.arrays.twoD;
 
+import java.util.Arrays;
+
 public class RotateImage {
     public static void main(String[] args) {
         int[][] matrix = new int[][]{
@@ -8,26 +10,28 @@ public class RotateImage {
                 {7, 8, 9}
         };
 
-        int[][] result = rotateImage(matrix);
+        rotateImage(matrix);
+
+        System.out.println(Arrays.deepToString(matrix));
     }
 
-    private static int[][] rotateImage(int[][] matrix) {
-        int n = matrix.length;
-        int m = matrix.length;
-        int[][] transpose = new int[m][n];
+    private static void rotateImage(int[][] matrix) {
+        int rowL = matrix.length;
+        int colL = matrix.length;
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                transpose[i][j] = matrix[j][i];
-            }
+        for (int i = 0; i < rowL; i++) {
+                int temp = matrix[i][colL-1-i];
+                matrix[i][colL-1-i] = matrix[i][i];
+                matrix[i][i] = temp;
         }
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-
-            }
+        for (int i = 0; i < rowL; i++) {
+                int temp = matrix[rowL - 1 - i][colL - 1 - i];
+                matrix[rowL - 1 - i][colL - 1 - i] = matrix[i][i];
+                matrix[i][i] = temp;
         }
 
-        return transpose;
+
+
     }
 }
